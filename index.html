@@ -24,7 +24,7 @@
         <div class="containerInput">
             <h2 v-if="toDo.length > 0">Cose da fare</h2>
             <ul >
-                <li v-for="(elemento, index) in toDo" :key="index" :title="elemento.done ? 'già fatto' : 'da fare'" @click="cambiaStato(index)">
+                <li v-for="(elemento, index) in toDo" :key="index" :title="elemento.done ? 'Done' : 'Clicca se hai eseguito il compito'" @click="cambiaStato(index)">
                     <span :class="elemento.done ? 'done' : ''">{{ elemento.text }}</span>
                     <i class="fa-solid fa-xmark" @click="eliminate(index)"></i>
                 </li>
