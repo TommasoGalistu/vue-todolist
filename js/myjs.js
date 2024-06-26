@@ -20,7 +20,10 @@ createApp({
         }
     },
     methods: {
-
+        eliminate(index){
+            this.toDo.splice(index, 1);
+        }
+        
     },
     mounted(){
 

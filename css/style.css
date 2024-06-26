@@ -58,3 +58,7 @@ li{
 .done{
     text-decoration: line-through;
 }
+
+.fa-xmark:hover{
+    cursor: pointer;
+}

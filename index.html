@@ -25,7 +25,7 @@
             <ul>
                 <li v-for="(elemento, index) in toDo" :key="index">
                     <span :class="elemento.done ? 'done' : ''">{{ elemento.text }}</span>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark" @click="eliminate(index)"></i>
                 </li>
                   
                   
