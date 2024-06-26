@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contPrincipale{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+input{
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 20rem;
+}
+
+button{
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+div, img{
+    margin-top: 2rem;
+}
+
+.containerInput, .doneInput{
+    background-color: rgb(207, 204, 204);
+    width: 50%;
+    margin: 2rem auto;
+    border-radius: 15px;
+    padding: 1rem;
+    padding-left: 2rem;
+    text-align: left;
+}
+
+.doneInput{
+    color: green;
+}
+ul{
+   list-style: none; 
+}
