@@ -15,8 +15,8 @@
     <div id="app" class="contPrincipale">
         <img src="" alt="logo boolean">
         <div class="inputCont">
-            <input type="text" placeholder="Scrivi testo">
-            <button>Inserisci</button>
+            <input v-model="newTextObj.text" type="text" placeholder="Scrivi testo">
+            <button @click="aggiungiToDo">Inserisci</button>
 
         </div>
 
