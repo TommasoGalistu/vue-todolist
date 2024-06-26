@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- link icone awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -21,7 +23,14 @@
         <div class="containerInput">
             <h2>Undone</h2>
             <ul>
-                <li v-for="elemento in toDo" :class="elemento.done ? 'done': ''">{{elemento.text}}</li>
+                <li v-for="(elemento, index) in toDo" :key="index">
+                    <span :class="elemento.done ? 'done' : ''">{{ elemento.text }}</span>
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+                  
+                  
+                
+
             </ul>
         </div>
         <div class="doneInput">
