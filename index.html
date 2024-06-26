@@ -21,7 +21,7 @@
         <div class="containerInput">
             <h2>Undone</h2>
             <ul>
-                <li>primo impegno</li>
+                <li v-for="elemento in toDo" :class="elemento.done ? 'done': ''">{{elemento.text}}</li>
             </ul>
         </div>
         <div class="doneInput">
