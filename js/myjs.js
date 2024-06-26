@@ -4,6 +4,7 @@ createApp({
     data(){
         return {
             newTextObj: {text: '', done: false},
+            error: false,
             toDo: [
                 {
                     text: 'Fare la spesa',
@@ -17,7 +18,10 @@ createApp({
                     text: 'Fare la spesa',
                     done: false
                 },
-            ]
+            ],
+            done: [
+
+            ],
         }
     },
     methods: {
@@ -25,7 +29,21 @@ createApp({
             this.toDo.splice(index, 1);
         },
         aggiungiToDo(){
-            this.toDo.unshift(this.newTextObj);
+            if(this.newTextObj.text.length > 4){
+                this.toDo.unshift(this.newTextObj);
+                this.error = false;
+            }else{
+                this.newTextObj.text = '';
+                this.error = true;
+            }
+        },
+        cambiaStato(index){
+            
+            if(this.toDo[index].done === false){
+                this.toDo[index].done = true;
+            }else{
+                this.toDo[index].done = false;
+            }
         }
         
     },

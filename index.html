@@ -8,22 +8,24 @@
     <!-- link icone awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>To DO List</title>
 </head>
 <body>
     
     <div id="app" class="contPrincipale">
         <img src="" alt="logo boolean">
-        <div class="inputCont">
-            <input v-model="newTextObj.text" type="text" placeholder="Scrivi testo">
+        <div class="inputCont" @keyup.enter="aggiungiToDo">
+            <input v-model="newTextObj.text" type="text" placeholder="Scrivi testo e premi Invio">
             <button @click="aggiungiToDo">Inserisci</button>
+            
 
         </div>
+        <h4 v-if="error" class="error">Aggiungi una parola di almeno 5 lettere</h4>
 
         <div class="containerInput">
             <h2>Undone</h2>
             <ul>
-                <li v-for="(elemento, index) in toDo" :key="index">
+                <li v-for="(elemento, index) in toDo" :key="index" :title="elemento.done ? 'già fatto' : 'da fare'" @click="cambiaStato(index)">
                     <span :class="elemento.done ? 'done' : ''">{{ elemento.text }}</span>
                     <i class="fa-solid fa-xmark" @click="eliminate(index)"></i>
                 </li>
