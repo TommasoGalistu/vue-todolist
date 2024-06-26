@@ -7,7 +7,7 @@ createApp({
             error: false,
             toDo: [
                 {
-                    text: 'Fare la spesa',
+                    text: 'lavare la macchina',
                     done: false
                 },
                 {
@@ -15,7 +15,7 @@ createApp({
                     done: true
                 },
                 {
-                    text: 'Fare la spesa',
+                    text: 'cucinare',
                     done: false
                 },
             ],
@@ -30,20 +30,23 @@ createApp({
         },
         aggiungiToDo(){
             if(this.newTextObj.text.length > 4){
-                this.toDo.unshift(this.newTextObj);
+                this.toDo.unshift({...this.newTextObj});
                 this.error = false;
+                this.newTextObj.text = '';
             }else{
                 this.newTextObj.text = '';
                 this.error = true;
             }
         },
         cambiaStato(index){
-            
             if(this.toDo[index].done === false){
                 this.toDo[index].done = true;
             }else{
                 this.toDo[index].done = false;
             }
+        },
+        eliminateText(){
+
         }
         
     },

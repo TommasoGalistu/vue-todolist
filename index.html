@@ -21,9 +21,8 @@
 
         </div>
         <h4 v-if="error" class="error">Aggiungi una parola di almeno 5 lettere</h4>
-
         <div class="containerInput">
-            <h2 v-if="toDo.length > 0">Undone</h2>
+            <h2 v-if="toDo.length > 0">Cose da fare</h2>
             <ul >
                 <li v-for="(elemento, index) in toDo" :key="index" :title="elemento.done ? 'già fatto' : 'da fare'" @click="cambiaStato(index)">
                     <span :class="elemento.done ? 'done' : ''">{{ elemento.text }}</span>
@@ -33,12 +32,7 @@
             <h2 v-if="toDo.length ===0" class="">Riposati, sarai stanco 😆</h2>
 
         </div>
-        <div class="doneInput">
-            <h2>Done</h2>
-            <ul>
-                <li>primo impegno done</li>
-            </ul>
-        </div>
+        
     </div>
     <script src="js/myjs.js"></script>
 </body>
